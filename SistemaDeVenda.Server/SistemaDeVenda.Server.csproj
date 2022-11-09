@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp2.1</TargetFramework>
+		<TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+		<UserSecretsId>aspnet-Autenticacao-7FB980A6-908F-4892-8CD9-B716AF113E6A</UserSecretsId>
+		<Platforms>AnyCPU;x86</Platforms>
+		<Version>01.05.00</Version>
+		<EnableDefaultContentItems>false</EnableDefaultContentItems>
+		<EnableMSDeployAppOffline>true</EnableMSDeployAppOffline>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="7.5.2" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="4.1.0" />
+		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.8.2" />
+		<PackageReference Include="Microsoft.AspNetCore.App" />
+		<PackageReference Include="OdeToCode.AddFeatureFolders" Version="2.0.1" />
+		<PackageReference Include="Tempus.Utils.AspNetCore" Version="3.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Migrations\" />
+		<Folder Include="wwwroot\" />
+	</ItemGroup>
+</Project>
