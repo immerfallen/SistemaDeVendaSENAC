@@ -23,6 +23,12 @@
             public int Id { get; set; }
 
             public string Nome { get; set; }
+
+            public string CPF_CNPJ { get; set; }
+
+            public string Senha { get; set; }
+
+            public string Email { get; set; }
         }        
 
         public class QueryHandler : AsyncRequestHandler<Query, Dto>
@@ -47,7 +53,10 @@
                     .Select(e => new ClienteDto
                     {
                         Id = e.Id,
-                        Nome = e.Nome
+                        Nome = e.Nome,
+                        Email = e.Email,
+                        CPF_CNPJ = e.CPF_CNPJ,
+                        Senha = e.Senha
                     })
                     .OrderBy(e => e.Nome)
                     .ToArrayAsync();

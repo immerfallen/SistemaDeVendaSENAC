@@ -21,8 +21,14 @@
         {
             public int? Id { get; set; }
 
-            public string Nome { get; set; }         
-           
+            public string Nome { get; set; }
+
+            public string CPF_CNPJ { get; set; }
+
+            public string Email { get; set; }
+
+            public string Senha { get; set; }
+
         }
 
         public class Validacao : AbstractValidator<Cliente>
@@ -67,7 +73,10 @@
                     .Select(e => new Command
                     {
                         Id = e.Id,                       
-                        Nome = e.Nome,                       
+                        Nome = e.Nome,
+                        Email = e.Email,
+                        Senha = e.Senha,
+                        CPF_CNPJ = e.CPF_CNPJ
                         
                     })
                     .FirstOrDefaultAsync(e => e.Id == request.Id);
@@ -98,14 +107,9 @@
                
                 if (!request.Id.HasValue)
                 {
-                    cliente = new Cliente()
-                    {
-                       
-                    };
+                    cliente = new Cliente();                    
 
-                    await _sistemaDeVendaContext.AddAsync(cliente);
-
-                   
+                    await _sistemaDeVendaContext.AddAsync(cliente);                   
                 }
                 else
                 {
@@ -118,9 +122,7 @@
 
                 Mapear(request, cliente);
 
-                await _validacao.ValidateAndThrowAsync(cliente);
-
-               
+                await _validacao.ValidateAndThrowAsync(cliente);               
 
                 await _sistemaDeVendaContext.SaveChangesAsync();
 
@@ -129,8 +131,10 @@
 
             private void Mapear(Command request, Cliente cliente)
             {
-                cliente.Nome = request.Nome;               
-
+                cliente.Nome = request.Nome; 
+                cliente.Email = request.Email;
+                cliente.CPF_CNPJ = request.CPF_CNPJ;
+                cliente.Senha = request.Senha;
             }
         }
     }

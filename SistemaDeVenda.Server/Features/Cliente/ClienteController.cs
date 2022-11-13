@@ -15,35 +15,35 @@
             _mediator = mediator;
         }
 
-        [HttpGet]
+        [HttpGet("api/cliente/listar")]
         [ResponseCache(NoStore = true)]       
         public async Task<IActionResult> Listar(Listar.Query request)
         {
             return Json(await _mediator.Send(request));
         }        
 
-        [HttpPost]        
+        [HttpPost("api/cliente/inserir")]        
         public async Task<IActionResult> Inserir([FromBody] InserirEditar.Command request)
         {
             return Json(await _mediator.Send(request));
         }
 
-        [HttpGet]       
+        [HttpGet("api/cliente/obterparaeditar/:id")]       
         public async Task<IActionResult> Editar(InserirEditar.Query request)
         {
             return Json(await _mediator.Send(request));
         }
 
-        [HttpPut]        
+        [HttpPut("api/cliente/editar/:id")]        
         public async Task<IActionResult> Editar([FromBody] InserirEditar.Command request)
         {
             return Json(await _mediator.Send(request));
         }
 
-        [HttpDelete]       
+        [HttpDelete("api/cliente/excluir/:id")]
         public async Task Excluir([FromBody] Excluir.Command request)
         {
             await _mediator.Send(request);
-        }        
+        }
     }
 }

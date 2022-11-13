@@ -32,8 +32,7 @@ namespace SistemaDeVenda.Server
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-           
+        {           
 
             services
                 .AddMvc(opt =>
@@ -50,9 +49,7 @@ namespace SistemaDeVenda.Server
             services.AddDbContext<SistemaDeVendaContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("SistemaDeVenda")));
 
-            services.AddMediatR();
-
-            services.AddApplicationInsightsTelemetry();          
+            services.AddMediatR();           
 
             //services.AddCors();
             services.AddCors(opts =>
@@ -73,6 +70,19 @@ namespace SistemaDeVenda.Server
             services.AddHttpContextAccessor();           
 
             RegisterValidators(services);
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
+                {
+                    Version = "v1",
+                    Title = "Documetação Sistema de Vendas",
+                    Description = "Essa documentação mostra os endpoints e como utilizá-los",
+                    TermsOfService = "none",
+                });
+                c.CustomSchemaIds(x => x.FullName);
+            });
+
         }
 
         private void RegisterValidators(IServiceCollection services)
@@ -131,6 +141,12 @@ namespace SistemaDeVenda.Server
                 opts.MapRoute(
                     name: "default",
                     template: "api/{controller}/{action}/{id?}");
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Documentação");
             });
 
             if (env.IsDevelopment())
