@@ -25,6 +25,8 @@
             modelBuilder.Entity<Vendedor>();
 
             modelBuilder.Entity<Usuario>();
+
+            modelBuilder.Entity<Produto>();
         }          
     }
 }
