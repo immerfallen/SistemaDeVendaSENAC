@@ -23,6 +23,8 @@
             });
 
             modelBuilder.Entity<Vendedor>();
+
+            modelBuilder.Entity<Usuario>();
         }          
     }
 }
