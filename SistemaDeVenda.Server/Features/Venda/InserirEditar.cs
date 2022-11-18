@@ -78,9 +78,7 @@
 
             protected override async Task<int> HandleCore(Command request)
             {
-                Venda venda;
-
-                
+                Venda venda;                
 
                 if (!request.Id.HasValue)
                 {
@@ -91,7 +89,7 @@
                 else
                 {
                     venda = await _sistemaDeVendaContext
-                        .Set<Venda>()
+                        .Set<Venda>()                        
                         .FirstOrDefaultAsync(e => e.Id == request.Id);
 
                     ChecarSe.Encontrou(venda);
@@ -99,15 +97,15 @@
 
                 Mapear(request, venda);                
 
-                await _sistemaDeVendaContext.SaveChangesAsync();
-
-                ItensVenda itens = new ItensVenda();
-
-                await _sistemaDeVendaContext.AddAsync(itens);
-
-                MapearItens(request, venda, itens);
+                await _sistemaDeVendaContext.SaveChangesAsync();                                  
 
                 await _sistemaDeVendaContext.SaveChangesAsync();
+
+                foreach (var produto in request.Produtos)
+                {
+                    await _mediator.Send(new Features.ItensVenda.InserirEditar.Command()
+                        { VendaId = venda.Id, ProdutoId=produto.Id});
+                }                
 
                 return venda.Id;
             }
@@ -119,14 +117,18 @@
                 venda.VendedorId = request.VendedorId;                
             }
 
-            private void MapearItens(Command request, Venda venda, ItensVenda itens)
+            private List<ItensVenda> MapearItens(Command request, Venda venda, ItensVenda itens)
             {
-                itens.VendaId = venda.Id;
+                List<ItensVenda> lista = new List<ItensVenda>();
 
                 foreach (var produto in request.Produtos)
-                {
+                {                   
                     itens.ProdutoId = produto.Id;
+                    itens.VendaId = venda.Id;
+
+                    lista.Add(itens);
                 }
+                return lista;
             }
         }
     }
