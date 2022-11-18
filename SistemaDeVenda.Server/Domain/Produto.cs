@@ -16,10 +16,10 @@
         
         public decimal PrecoUnitario { get; set; }
 
-        public decimal QnuantidadeEstoque { get; set; }
+        public decimal QuantidadeEstoque { get; set; }
 
         public string UnidadeMedida { get; set; }
 
-        public string LinkFoto { get; set; }
+        public string LinkFoto { get; set; }        
     }
 }

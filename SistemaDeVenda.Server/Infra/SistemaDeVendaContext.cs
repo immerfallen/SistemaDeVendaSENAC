@@ -4,8 +4,8 @@
     using System.Threading;
     using System.Threading.Tasks;
     using SistemaDeVenda.Server.Domain;
-   
-    using Microsoft.EntityFrameworkCore;    
+
+    using Microsoft.EntityFrameworkCore;
 
     public class SistemaDeVendaContext : DbContext
     {
@@ -15,10 +15,10 @@
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+
 
             modelBuilder.Entity<Cliente>(opts =>
-            {                          
+            {
                 opts.HasIndex(p => new { p.Nome }).IsUnique();
             });
 
@@ -27,6 +27,15 @@
             modelBuilder.Entity<Usuario>();
 
             modelBuilder.Entity<Produto>();
-        }          
+
+            modelBuilder.Entity<Venda>(opts =>
+            {
+                opts.Property(p => p.Data).HasColumnType("Date");
+                     
+
+            });
+
+            modelBuilder.Entity<ItensVenda>();
+        }
     }
 }

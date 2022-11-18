@@ -76,11 +76,11 @@
                     .AsNoTracking()
                     .Select(e => new Command
                     {
-                        Id = e.Id,                       
+                        Id = e.Id,
                         Nome = e.Nome,
                         Descricao = e.Descricao,
                         PrecoUnitario = e.PrecoUnitario,
-                        QuantidadeEstoque = e.QnuantidadeEstoque,
+                        QuantidadeEstoque = e.QuantidadeEstoque,
                         UnidadeMedida = e.UnidadeMedida,
                         LinkFoto = e.LinkFoto                                                 
                     })
@@ -108,7 +108,6 @@
             protected override async Task<int> HandleCore(Command request)
             {
                 Produto produto;
-
                
                 if (!request.Id.HasValue)
                 {
@@ -139,7 +138,7 @@
                 produto.Nome = request.Nome;
                 produto.Descricao = request.Descricao;
                 produto.PrecoUnitario = request.PrecoUnitario;
-                produto.QnuantidadeEstoque = request.QuantidadeEstoque;
+                produto.QuantidadeEstoque = request.QuantidadeEstoque;
                 produto.UnidadeMedida = request.UnidadeMedida;
                 produto.LinkFoto = request.LinkFoto;                
             }

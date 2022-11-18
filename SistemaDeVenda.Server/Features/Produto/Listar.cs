@@ -60,7 +60,7 @@
                         Nome = e.Nome,
                         Descricao = e.Descricao,                        
                         PrecoUnitario = e.PrecoUnitario,
-                        QuantidadeEstoque = e.QnuantidadeEstoque,
+                        QuantidadeEstoque = e.QuantidadeEstoque,
                         UnidadeMedida = e.UnidadeMedida,
                         LinkFoto = e.LinkFoto
                     })
