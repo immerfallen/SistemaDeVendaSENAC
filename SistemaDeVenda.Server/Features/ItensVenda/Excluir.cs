@@ -1,4 +1,4 @@
-﻿namespace SistemaDeVenda.Server.Features.Venda
+﻿namespace SistemaDeVenda.Server.Features.ItensVenda
 {
     using SistemaDeVenda.Server.Infra;
     using MediatR;
@@ -28,15 +28,15 @@
 
             protected override async Task HandleCore(Command request)
             {
-                var venda = await _context
-                    .Set<Venda>()
-                    .FirstOrDefaultAsync(e => e.Id == request.Id);
+                //var vendedor = await _context
+                //    .Set<Vendedor>()
+                //    .FirstOrDefaultAsync(e => e.Id == request.Id);
 
-                ChecarSe.Encontrou(venda);
+                //ChecarSe.Encontrou(vendedor);
 
-                _context.Remove(venda);
-
-                await _context.SaveChangesAsync();
+                //_context.Remove(vendedor);
+               
+                //await _context.SaveChangesAsync();
             }
         }
     }
