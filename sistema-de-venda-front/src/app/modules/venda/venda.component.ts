@@ -7,6 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendaComponent implements OnInit {
 
+  itensMenu = [
+    { 'rotulo': 'Vendas', 'link': 'venda', 'active': true },
+    { 'rotulo': 'Clientes', 'link': 'cliente', 'active': false }
+  ]
+
+  itensMenuGer = [
+    { 'rotulo': 'Vendas', 'link': 'venda', 'active': true },
+    { 'rotulo': 'Vendedores', 'link': 'vendedor', 'active': false },
+    { 'rotulo': 'Clientes', 'link': 'cliente', 'active': false }
+  ]
+
+  tipoUsuario = sessionStorage.getItem('tipoUsuario');
+
   constructor() { }
 
   ngOnInit() {

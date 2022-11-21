@@ -5,14 +5,8 @@
         <div class="row mb-3">
             <div class="col-12">
 
-                <ul class="nav nav-tabs mb-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/venda">Vendas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/cliente">Clientes</a>
-                    </li>
-                </ul>
+                <app-menu [itens]="itensMenu" *ngIf="tipoUsuario == 0"></app-menu>
+                <app-menu [itens]="itensMenuGer" *ngIf="tipoUsuario == 2"></app-menu>
 
                 <form [formGroup]="clienteForm" novalidate>
                     <div class="mb-3">

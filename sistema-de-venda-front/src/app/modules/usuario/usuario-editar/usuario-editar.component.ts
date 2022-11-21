@@ -17,6 +17,13 @@ export class UsuarioEditarComponent implements OnInit {
   novoUsuario: UsuarioModel;
   slug: any;
 
+  itensMenu = [
+    { 'rotulo': 'Produtos', 'link': 'produto', 'active': false },
+    { 'rotulo': 'Usuários', 'link': 'usuario', 'active': true }
+  ]
+
+  tipoUsuario = sessionStorage.getItem('tipoUsuario');
+
   constructor(
     private fb: FormBuilder,
     private usuarioService: UsuarioService,

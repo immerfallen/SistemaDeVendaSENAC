@@ -17,6 +17,19 @@ export class ClienteEditarComponent implements OnInit {
   novoCliente: ClienteModel;
   slug: any;
 
+  itensMenu = [
+    { 'rotulo': 'Vendas', 'link': 'venda', 'active': false },
+    { 'rotulo': 'Clientes', 'link': 'cliente', 'active': true }
+  ]
+
+  itensMenuGer = [
+    { 'rotulo': 'Vendas', 'link': 'venda', 'active': false },
+    { 'rotulo': 'Vendedores', 'link': 'vendedor', 'active': false },
+    { 'rotulo': 'Clientes', 'link': 'cliente', 'active': true }
+  ]
+
+  tipoUsuario = sessionStorage.getItem('tipoUsuario');
+
   constructor(
     private fb: FormBuilder,
     private clienteService: ClienteService,

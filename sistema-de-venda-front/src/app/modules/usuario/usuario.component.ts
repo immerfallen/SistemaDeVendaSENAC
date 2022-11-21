@@ -10,6 +10,13 @@ export class UsuarioComponent implements OnInit {
 
   listaUsuarios: any;
 
+  itensMenu = [
+    { 'rotulo': 'Produtos', 'link': 'produto', 'active': false },
+    { 'rotulo': 'Usuários', 'link': 'usuario', 'active': true }
+  ]
+
+  tipoUsuario = sessionStorage.getItem('tipoUsuario');
+
   constructor(
     private usuarioService: UsuarioService
   ) { }

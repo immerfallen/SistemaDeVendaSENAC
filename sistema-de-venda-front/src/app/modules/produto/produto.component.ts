@@ -9,6 +9,13 @@ import { ProdutoService } from 'src/app/core/services/produto/produto.service';
 export class ProdutoComponent implements OnInit {
   listaProduto: any;
 
+  itensMenu = [
+    { 'rotulo': 'Produtos', 'link': 'produto', 'active': true },
+    { 'rotulo': 'Usuários', 'link': 'usuario', 'active': false }
+  ]
+
+  tipoUsuario = sessionStorage.getItem('tipoUsuario');
+
   constructor(
     private produtoService: ProdutoService
   ) { }

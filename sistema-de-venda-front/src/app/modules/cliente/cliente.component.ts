@@ -9,6 +9,19 @@ import { ClienteService } from 'src/app/core/services/cliente/cliente.service';
 export class ClienteComponent implements OnInit {
   listaClientes: any;
 
+  itensMenu = [
+    { 'rotulo': 'Vendas', 'link': 'venda', 'active': false },
+    { 'rotulo': 'Clientes', 'link': 'cliente', 'active': true }
+  ]
+
+  itensMenuGer = [
+    { 'rotulo': 'Vendas', 'link': 'venda', 'active': false },
+    { 'rotulo': 'Vendedores', 'link': 'vendedor', 'active': false },
+    { 'rotulo': 'Clientes', 'link': 'cliente', 'active': true }
+  ]
+
+  tipoUsuario = sessionStorage.getItem('tipoUsuario');
+
   constructor(
     private clienteService: ClienteService
   ) { }

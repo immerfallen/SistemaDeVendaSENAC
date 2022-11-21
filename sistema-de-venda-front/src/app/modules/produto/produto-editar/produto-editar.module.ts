@@ -5,6 +5,7 @@ import { ProdutoEditarRoutingModule } from './produto-editar-routing.module';
 import { ProdutoEditarComponent } from './produto-editar.component';
 import { CoreModule } from 'src/app/core/core.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [ProdutoEditarComponent],
@@ -12,7 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ProdutoEditarRoutingModule,
     CoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class ProdutoEditarModule { }

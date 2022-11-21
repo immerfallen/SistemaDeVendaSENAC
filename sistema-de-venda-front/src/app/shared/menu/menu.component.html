@@ -1,0 +1,5 @@
+<ul class="nav nav-tabs mb-5">
+    <li class="nav-item" *ngFor="let item of itens; index as i">
+        <a class="nav-link" [href]="item.link" [ngClass]="{'active': item.active}">{{item.rotulo}}</a>
+    </li>
+</ul>

@@ -5,14 +5,7 @@
         <div class="row mb-3">
             <div class="col-12">
 
-                <ul class="nav nav-tabs mb-3">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/usuario">Usuários</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/produto">Produtos</a>
-                    </li>
-                </ul>
+                <app-menu [itens]="itensMenu"></app-menu>
 
                 <form [formGroup]="usuarioForm" novalidate>
                     <div class="mb-3">

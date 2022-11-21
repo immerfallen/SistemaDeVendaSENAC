@@ -15,6 +15,14 @@ export class VendedorInserirComponent implements OnInit {
   error = false;
   novoVendedor: VendedorModel;
 
+  itensMenu = [
+    { 'rotulo': 'Vendas', 'link': 'venda', 'active': false },
+    { 'rotulo': 'Vendedores', 'link': 'vendedor', 'active': true },
+    { 'rotulo': 'Clientes', 'link': 'cliente', 'active': false }
+  ]
+
+  tipoUsuario = sessionStorage.getItem('tipoUsuario');
+
   constructor(
     private fb: FormBuilder,
     private vendedorService: VendedorService

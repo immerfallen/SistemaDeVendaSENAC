@@ -9,6 +9,14 @@ import { VendedorService } from 'src/app/core/services/vendedor/vendedor.service
 export class VendedorComponent implements OnInit {
   listaVendedor: any;
 
+  itensMenu = [
+    { 'rotulo': 'Vendas', 'link': 'venda', 'active': false },
+    { 'rotulo': 'Vendedores', 'link': 'vendedor', 'active': true },
+    { 'rotulo': 'Clientes', 'link': 'cliente', 'active': false }
+  ]
+
+  tipoUsuario = sessionStorage.getItem('tipoUsuario');
+
   constructor(
     private vendedorService: VendedorService
   ) { }

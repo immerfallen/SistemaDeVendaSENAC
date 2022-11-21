@@ -5,6 +5,7 @@ import { ClienteInserirRoutingModule } from './cliente-inserir-routing.module';
 import { ClienteInserirComponent } from './cliente-inserir.component';
 import { CoreModule } from 'src/app/core/core.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [ClienteInserirComponent],
@@ -12,7 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ClienteInserirRoutingModule,
     CoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class ClienteInserirModule { }

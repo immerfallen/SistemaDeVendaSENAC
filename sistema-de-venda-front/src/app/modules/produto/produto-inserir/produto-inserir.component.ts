@@ -15,6 +15,13 @@ export class ProdutoInserirComponent implements OnInit {
   error = false;
   novoProduto: ProdutoModel;
 
+  itensMenu = [
+    { 'rotulo': 'Produtos', 'link': 'produto', 'active': true },
+    { 'rotulo': 'Usuários', 'link': 'usuario', 'active': false }
+  ]
+
+  tipoUsuario = sessionStorage.getItem('tipoUsuario');
+
   constructor(
     private fb: FormBuilder,
     private produtoService: ProdutoService

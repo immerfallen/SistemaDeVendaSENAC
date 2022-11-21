@@ -5,6 +5,7 @@ import { ProdutoInserirRoutingModule } from './produto-inserir-routing.module';
 import { ProdutoInserirComponent } from './produto-inserir.component';
 import { CoreModule } from 'src/app/core/core.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [ProdutoInserirComponent],
@@ -12,7 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ProdutoInserirRoutingModule,
     CoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class ProdutoInserirModule { }

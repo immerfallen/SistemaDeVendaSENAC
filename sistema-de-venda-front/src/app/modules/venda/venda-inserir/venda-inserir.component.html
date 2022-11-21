@@ -5,20 +5,8 @@
         <div class="row mb-3">
             <div class="col-12">
 
-                <ul class="nav nav-tabs mb-5">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Active</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li>
-                </ul>
+                <app-menu [itens]="itensMenu" *ngIf="tipoUsuario == 0"></app-menu>
+                <app-menu [itens]="itensMenuGer" *ngIf="tipoUsuario == 2"></app-menu>
 
                 <form>
                     <div class="mb-3">

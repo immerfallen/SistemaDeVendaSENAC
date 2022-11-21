@@ -5,14 +5,8 @@
         <div class="row">
             <div class="col-12">
 
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/venda">Vendas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/cliente">Clientes</a>
-                    </li>
-                </ul>
+                <app-menu [itens]="itensMenu" *ngIf="tipoUsuario == 0"></app-menu>
+                <app-menu [itens]="itensMenuGer" *ngIf="tipoUsuario == 2"></app-menu>
 
                 <div class="text-center mt-5 mb-5">
                     <a href="/cliente/inserir" class="btn btn-primary">Novo Cliente</a>
