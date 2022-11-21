@@ -5,57 +5,51 @@
         <div class="row mb-3">
             <div class="col-12">
 
-                <ul class="nav nav-tabs mb-5">
+                <ul class="nav nav-tabs mb-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                        <a class="nav-link active" href="/usuario">Usuários</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
+                        <a class="nav-link" href="/produto">Produtos</a>
                     </li>
                 </ul>
 
-                <form>
+                <form [formGroup]="usuarioForm" novalidate>
                     <div class="mb-3">
                         <label for="">Nome Completo</label>
-                        <input type="text" class="form-control" name="" id="">
+                        <input type="text" class="form-control" formControlName="nome">
                     </div>
                     <div class="mb-3">
                         <label for="">E-mail</label>
-                        <input type="text" class="form-control" name="" id="">
+                        <input type="text" class="form-control" formControlName="email">
                     </div>
                     <div class="mb-3">
                         <label for="">Senha</label>
-                        <input type="password" class="form-control" name="" id="">
+                        <input type="password" class="form-control" formControlName="senha">
                     </div>
                     <div class="mb-3">
                         <label for="">Tipo de Usuário</label>
-                        <select class="form-select">
-                            <option selected>Selecione</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select" formControlName="tipo">
+                            <option selected value="">Selecione</option>
+                            <option value="3">Administrador</option>
+                            <option value="2">Gerente de Vendas</option>
+                            <option value="0">Vendedor</option>
                         </select>
                     </div>
                     <div>
-                        <button class="btn btn-primary">Salvar Usuário</button>
+                        <button class="btn btn-primary" (click)="enviar()">Salvar Usuário</button>
                     </div>
                 </form>
 
             </div>
         </div>
 
-        <div class="alert alert-success alert-dismissible" role="alert">
+        <div class="alert alert-success alert-dismissible" role="alert" *ngIf="success">
             <div>Usuário cadastrado com sucesso!</div>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
         </div>
 
-        <div class="alert alert-danger alert-dismissible" role="alert">
+        <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="error">
             <div>Houve um erro, tente novamente!</div>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
         </div>

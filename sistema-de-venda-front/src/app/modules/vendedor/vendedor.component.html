@@ -21,7 +21,7 @@
                 </ul>
 
                 <div class="text-center mt-5 mb-5">
-                    <a href="#" class="btn btn-primary">Novo Vendedor</a>
+                    <a href="/vendedor/inserir" class="btn btn-primary">Novo Vendedor</a>
                 </div>
 
                 <table class="table">
@@ -34,18 +34,18 @@
                             <th scope="col"></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td scope="row">1</td>
-                            <td>Rafael</td>
-                            <td>rafa@rafa.com</td>
+                    <tbody *ngIf="listaVendedor">
+                        <tr *ngFor="let item of listaVendedor.vendedores; index as i">
+                            <td scope="row">{{ i + 1 }}</td>
+                            <td>{{ item.nome }}</td>
+                            <td>{{ item.email }}</td>
                             <td>
-                                <a href="#" title="Editar" class="link-secondary">
+                                <a [attr.href]="'/vendedor/editar/' + item.id" title="Editar" class="link-secondary">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                             </td>
                             <td>
-                                <a href="#" title="Excluir" class="link-danger">
+                                <a href="javascript:void[0];" title="Excluir" class="link-danger" (click)="excluir(item.id)">
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </a>
                             </td>

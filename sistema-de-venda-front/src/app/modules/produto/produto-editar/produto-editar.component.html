@@ -1,1 +1,68 @@
-<p>produto-editar works!</p>
+<app-header></app-header>
+
+<section class="formulario">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-12">
+
+                <ul class="nav nav-tabs mb-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+
+                <form [formGroup]="produtoForm" novalidate>
+                    <div class="mb-3">
+                        <label for="">Nome</label>
+                        <input type="text" class="form-control" formControlName="nome">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Descrição</label>
+                        <input type="text" class="form-control" formControlName="descricao">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Preço Unitário</label>
+                        <input type="text" class="form-control" formControlName="preco">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Quantidade em Estoque</label>
+                        <input type="text" class="form-control" formControlName="quantidade">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Unidade de Medida</label>
+                        <input type="text" class="form-control" formControlName="medida">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Link da Imagem</label>
+                        <input type="text" class="form-control" formControlName="imagem">
+                    </div>
+                    <div>
+                        <button class="btn btn-primary" (click)="enviar()">Salvar Produto</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="alert alert-success alert-dismissible" role="alert" *ngIf="success">
+            <div>Produto alterado com sucesso!</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+
+        <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="error">
+            <div>Houve um erro, tente novamente!</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

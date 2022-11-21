@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ExcluirModel } from 'src/app/core/models/excluir.model';
 import { ClienteService } from 'src/app/core/services/cliente/cliente.service';
 
 @Component({
@@ -9,7 +8,6 @@ import { ClienteService } from 'src/app/core/services/cliente/cliente.service';
 })
 export class ClienteComponent implements OnInit {
   listaClientes: any;
-  excluirModel: ExcluirModel;
 
   constructor(
     private clienteService: ClienteService
@@ -26,9 +24,11 @@ export class ClienteComponent implements OnInit {
   }
 
   excluir(id) {
-    this.excluirModel = new ExcluirModel();
-    this.excluirModel.id = id;
-    this.clienteService.excluirCliente(this.excluirModel, id).subscribe((resp) => {
+    const obj = {
+      id: id
+    }
+
+    this.clienteService.excluirCliente(obj).subscribe((resp) => {
       console.log(resp);
     });
   }

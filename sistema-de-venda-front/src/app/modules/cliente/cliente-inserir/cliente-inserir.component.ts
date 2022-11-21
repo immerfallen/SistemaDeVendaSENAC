@@ -41,7 +41,7 @@ export class ClienteInserirComponent implements OnInit {
       this.novoCliente = new ClienteModel();
 
       this.novoCliente.nome = this.clienteForm.value.nome;
-      this.novoCliente.CPF_CNPJ = this.clienteForm.value.cpf;
+      this.novoCliente.cpF_CNPJ = this.clienteForm.value.cpf;
       this.novoCliente.email = this.clienteForm.value.email;
 
       this.clienteService.inserirCliente(this.novoCliente).subscribe((resp) => {
