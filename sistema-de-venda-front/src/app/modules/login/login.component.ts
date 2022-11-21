@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('tipoUsuario', resp.papel);
 
           if (resp.papel == 0) {
-            this.router.navigateByUrl('/cliente');
+            this.router.navigateByUrl('/venda');
           } else if (resp.papel == 2) {
             this.router.navigateByUrl('/venda');
           } else if (resp.papel == 3) {
