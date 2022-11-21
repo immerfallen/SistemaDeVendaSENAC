@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { ProdutoInserirRoutingModule } from './produto-inserir-routing.module';
 import { ProdutoInserirComponent } from './produto-inserir.component';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
   declarations: [ProdutoInserirComponent],
   imports: [
     CommonModule,
-    ProdutoInserirRoutingModule
+    ProdutoInserirRoutingModule,
+    CoreModule
   ]
 })
 export class ProdutoInserirModule { }

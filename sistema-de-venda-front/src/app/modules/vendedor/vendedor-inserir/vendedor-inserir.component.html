@@ -1,1 +1,52 @@
-<p>vendedor-inserir works!</p>
+<app-header></app-header>
+
+<section class="formulario">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-12">
+
+                <ul class="nav nav-tabs mb-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="">Nome</label>
+                        <input type="text" class="form-control" name="" id="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">E-mail</label>
+                        <input type="text" class="form-control" name="" id="">
+                    </div>
+                    <div>
+                        <button class="btn btn-primary">Salvar Venda</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <div>Vendedor cadastrado com sucesso!</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <div>Houve um erro, tente novamente!</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

@@ -1,1 +1,67 @@
-<p>produto works!</p>
+<app-header></app-header>
+
+<section class="listagem">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+
+                <div class="text-center mt-5 mb-5">
+                    <a href="#" class="btn btn-primary">Novo Produto</a>
+                </div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Preço Unitário</th>
+                            <th scope="col">Quantidade em Estoque</th>
+                            <th scope="col">Unidade de Medida</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">1</td>
+                            <td>Televisor</td>
+                            <td>55 polegadas</td>
+                            <td>R$ 4000,00</td>
+                            <td>20</td>
+                            <td>Polegadas</td>
+                            <td>
+                                <a href="#" title="Editar" class="link-secondary">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" title="Excluir" class="link-danger">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

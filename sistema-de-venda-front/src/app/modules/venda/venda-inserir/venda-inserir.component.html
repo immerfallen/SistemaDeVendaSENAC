@@ -1,1 +1,70 @@
-<p>venda-inserir works!</p>
+<app-header></app-header>
+
+<section class="formulario">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-12">
+
+                <ul class="nav nav-tabs mb-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="">Cliente</label>
+                        <select class="form-select">
+                            <option selected>Selecione</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Produto</label>
+                        <select class="form-select">
+                            <option selected>Selecione</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Quantidade</label>
+                        <input type="text" class="form-control" name="" id="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Preço Unitário</label>
+                        <input type="text" class="form-control" name="" id="">
+                    </div>
+                    <div>
+                        <button class="btn btn-primary">Salvar Venda</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <div>Venda cadastrada com sucesso!</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <div>Houve um erro, tente novamente!</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>
