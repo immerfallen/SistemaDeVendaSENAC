@@ -1,1 +1,54 @@
-<p>venda-editar works!</p>
+<app-header></app-header>
+
+<section class="formulario">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-12">
+
+                <app-menu [itens]="itensMenu" *ngIf="tipoUsuario == 0"></app-menu>
+                <app-menu [itens]="itensMenuGer" *ngIf="tipoUsuario == 2"></app-menu>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="">Cliente</label>
+                        <select class="form-select" *ngIf="listaClientes">
+                            <option value="">Selecione</option>
+                            <option value="1" *ngFor="let item of listaClientes.clientes; index as i">{{item.nome}}</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Produto</label>
+                        <select class="form-select" *ngIf="listaProduto">
+                            <option value="">Selecione</option>
+                            <option value="1" *ngFor="let item of listaProduto.produtos; index as i">{{item.nome}}</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Quantidade</label>
+                        <input type="text" class="form-control" name="" id="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Preço Unitário</label>
+                        <input type="text" class="form-control" name="" id="">
+                    </div>
+                    <div>
+                        <button class="btn btn-primary">Salvar Venda</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="alert alert-success alert-dismissible" role="alert" *ngIf="success">
+            <div>Venda cadastrada com sucesso!</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+
+        <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="error">
+            <div>Houve um erro, tente novamente!</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

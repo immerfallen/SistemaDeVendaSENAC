@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'usuario/editar/:id', loadChildren: () => import('./modules/usuario/usuario-editar/usuario-editar.module').then(m => m.UsuarioEditarModule) },
   { path: 'venda', loadChildren: () => import('./modules/venda/venda.module').then(m => m.VendaModule) },
   { path: 'venda/inserir', loadChildren: () => import('./modules/venda/venda-inserir/venda-inserir.module').then(m => m.VendaInserirModule) },
-  { path: 'venda/editar', loadChildren: () => import('./modules/venda/venda-editar/venda-editar.module').then(m => m.VendaEditarModule) },
+  { path: 'venda/editar/:id', loadChildren: () => import('./modules/venda/venda-editar/venda-editar.module').then(m => m.VendaEditarModule) },
   { path: 'vendedor', loadChildren: () => import('./modules/vendedor/vendedor.module').then(m => m.VendedorModule) },
   { path: 'vendedor/inserir', loadChildren: () => import('./modules/vendedor/vendedor-inserir/vendedor-inserir.module').then(m => m.VendedorInserirModule) },
   { path: 'vendedor/editar/:id', loadChildren: () => import('./modules/vendedor/vendedor-editar/vendedor-editar.module').then(m => m.VendedorEditarModule) }

@@ -13,7 +13,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     VendaEditarRoutingModule,
     CoreModule,
-    ReactiveFormsModule,
     SharedModule
   ]
 })

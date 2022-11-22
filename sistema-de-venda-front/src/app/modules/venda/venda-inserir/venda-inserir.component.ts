@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClienteService } from 'src/app/core/services/cliente/cliente.service';
+import { ProdutoService } from 'src/app/core/services/produto/produto.service';
 
 @Component({
   selector: 'app-venda-inserir',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./venda-inserir.component.scss']
 })
 export class VendaInserirComponent implements OnInit {
+  listaClientes: any;
+  listaProduto: any;
 
   itensMenu = [
     { 'rotulo': 'Vendas', 'link': 'venda', 'active': true },
@@ -20,9 +24,26 @@ export class VendaInserirComponent implements OnInit {
 
   tipoUsuario = sessionStorage.getItem('tipoUsuario');
 
-  constructor() { }
+  constructor(
+    private clienteService: ClienteService,
+    private produtoService: ProdutoService
+  ) { }
 
   ngOnInit() {
+    this.listarClientes();
+    this.listarProdutos();
+  }
+
+  listarClientes() {
+    this.clienteService.listarClientes().subscribe((resp) => {
+      this.listaClientes = resp;
+    });
+  }
+
+  listarProdutos() {
+    this.produtoService.listarProdutos().subscribe((resp) => {
+      this.listaProduto = resp;
+    });
   }
 
 }
